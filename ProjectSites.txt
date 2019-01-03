@@ -1,0 +1,7 @@
+https://www.rototron.info/raspberry-pi-ina219-tutorial/
+https://dev.ti.com/
+https://towardsdatascience.com/simple-and-multiple-linear-regression-in-python-c928425168f9
+https://hexdocs.pm/robotica_rpi3/readme.html
+https://www.motionsolutions.com/servo-motor-vs-stepper-motor-right-application/?cn-reloaded=1
+http://fritzing.org/media/fritzing-repo/projects/d/dc-smart-meter/code/DC_monitorv6.ino
+https://repl.it/repls/TrivialInternalShareware
