@@ -1,0 +1,33 @@
+import urllib.request
+import re
+from bs4 import BeautifulSoup
+import random
+import json
+import time 
+data=urllib.request.urlopen("https://api.thingspeak.com/update?api_key=FHLITOUODAIGKXJJ&field1="+str(900))
+print (data)
+
+incomingVoltage = 0
+incomingCurrent = 0 
+powerMeasured = 0 
+instantaneousPower = 0 
+maxVoltage = 300.0
+maxCurrent = 30.0
+instantaneousPower = incomingCurrent * incomingVoltage
+
+while True:
+    incomingCurrent = random.randint(1,30)
+    incomingVoltage = random.randint(1,300)*20
+    instantaneousPower = incomingCurrent * incomingVoltage
+    print(incomingCurrent)
+    print(incomingVoltage)
+    print(instantaneousPower)
+    if incomingCurrent >= 0 and incomingCurrent <=30 and incomingVoltage>=0 and incomingVoltage<=225 :
+        data=urllib.request.urlopen("https://api.thingspeak.com/update?api_key=FHLITOUODAIGKXJJ&field2="+str(incomingCurrent))
+        time.sleep(0.5)
+        data=urllib.request.urlopen("https://api.thingspeak.com/update?api_key=FHLITOUODAIGKXJJ&field1="+str(incomingVoltage))
+        time.sleep(0.5)
+        data=urllib.request.urlopen("https://api.thingspeak.com/update?api_key=FHLITOUODAIGKXJJ&field3="+str(instantaneousPower))
+        time.sleep(0.5)
+
+    else : print("N/A!!!")
